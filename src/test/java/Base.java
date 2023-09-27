@@ -5,7 +5,6 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import pageobjects.LoginPage;
 import pageobjects.MainPage;
 import pojo.Login;
@@ -27,7 +26,6 @@ public class Base {
 
     @Before
     public void baseInit() {
-        //System.setProperty("webdriver.chrome.driver", "C:\\chromedriver_win32\\yandexdriver.exe");
         driver = new ChromeDriver();
         RestAssured.baseURI = "https://stellarburgers.nomoreparties.site";
         mainPage = new MainPage(driver);

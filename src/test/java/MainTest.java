@@ -1,7 +1,4 @@
-import org.junit.Assert;
 import org.junit.Test;
-
-import java.util.concurrent.TimeUnit;
 
 public class MainTest extends Base{
     @Test
@@ -9,22 +6,23 @@ public class MainTest extends Base{
         driver.get("https://stellarburgers.nomoreparties.site/");
         mainPage.waitForLoad();
         mainPage.clickfillingsButton();
-        Assert.assertTrue(mainPage.isVisibleFillings());
+        mainPage.waitForChooseFillings();
     }
     @Test
-    public void scrollSauces(){
+    public void scrollSauces() throws InterruptedException {
         driver.get("https://stellarburgers.nomoreparties.site/");
         mainPage.waitForLoad();
         mainPage.clickSaucesButton();
-        Assert.assertTrue(mainPage.isVisibleSauces());
+        mainPage.waitForChooseSauces();
     }
     @Test
-    public void scrollRolls(){
+    public void scrollRolls() {
         driver.get("https://stellarburgers.nomoreparties.site/");
         mainPage.waitForLoad();
         mainPage.clickSaucesButton();
+        mainPage.waitForChooseSauces();
         mainPage.clickRollsButton();
-        Assert.assertTrue(mainPage.isVisibleRolls());
+        mainPage.waitForChooseRolls();
     }
 
 }
